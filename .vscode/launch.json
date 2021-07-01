@@ -4,6 +4,7 @@
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Debug-Local",
             "request": "launch",
@@ -11,8 +12,6 @@
             "program": "lib/main.dart",
             "args": [
                 "--debug",
-                "--flavor",
-                "local",
                 "--dart-define=FLAVOR=local",
             ],
         },
@@ -23,8 +22,6 @@
             "program": "lib/main.dart",
             "args": [
                 "--release",
-                "--flavor",
-                "local",
                 "--dart-define=FLAVOR=local",
             ],
         },
@@ -35,8 +32,6 @@
             "program": "lib/main.dart",
             "args": [
                 "--debug",
-                "--flavor",
-                "prod",
                 "--dart-define=FLAVOR=prod",
             ],
         },
@@ -47,8 +42,6 @@
             "program": "lib/main.dart",
             "args": [
                 "--release",
-                "--flavor",
-                "prod",
                 "--dart-define=FLAVOR=prod",
             ],
         },

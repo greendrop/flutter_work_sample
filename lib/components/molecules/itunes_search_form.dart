@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 @immutable
-class AppSearchAddForm extends HookWidget {
-  const AppSearchAddForm(
+class ItunesSearchAddForm extends HookWidget {
+  const ItunesSearchAddForm(
       {required this.onChangedTerm,
       required this.onChangedMedia,
       required this.onPressedSearch});
@@ -34,7 +34,8 @@ class AppSearchAddForm extends HookWidget {
       TextFormField(
           controller: termTextEditingController,
           decoration: const InputDecoration(labelText: 'Term'),
-          validator: _termValidator),
+          validator: _termValidator,
+          autovalidateMode: AutovalidateMode.onUserInteraction),
       DropdownButton(
           items: const [
             DropdownMenuItem(value: 'music', child: Text('music')),

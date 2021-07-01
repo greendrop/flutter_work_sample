@@ -16,7 +16,7 @@ class DrawerBody extends HookWidget {
           color: Colors.blue,
         ),
         child: Text(
-          'App Search',
+          'iTunes Search',
           style: TextStyle(
             fontSize: 24,
             color: Colors.white,
@@ -24,7 +24,7 @@ class DrawerBody extends HookWidget {
         ),
       ),
       ListTile(
-        title: const Text('App Search'),
+        title: const Text('iTunes Search'),
         onTap: replaceRouteAppSearch,
       ),
     ]));

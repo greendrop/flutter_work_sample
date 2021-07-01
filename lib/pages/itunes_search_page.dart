@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_work_sample/components/organisms/app_search_body.dart';
+import 'package:flutter_work_sample/components/organisms/itunes_search_body.dart';
 import 'package:flutter_work_sample/components/organisms/drawer_body.dart';
 
-class AppSearchPage extends HookWidget {
-  final _title = 'App Search';
+class ItunesSearchPage extends HookWidget {
+  final _title = 'iTunes Search';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text(_title)),
         drawer: DrawerBody(),
-        body: AppSearchBody());
+        body: ItunesSearchBody());
   }
 }

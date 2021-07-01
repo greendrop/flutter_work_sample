@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_work_sample/config/app_config.dart';
-import 'package:flutter_work_sample/pages/app_search_page.dart';
+import 'package:flutter_work_sample/pages/itunes_search_page.dart';
 import 'package:flutter_work_sample/pages/not_found_page.dart';
 import 'package:routemaster/routemaster.dart';
 
@@ -28,7 +28,7 @@ class AppRootMain extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-        title: 'GitHub Contribution Graph Summay',
+        title: 'iTunes Search',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -40,7 +40,8 @@ class AppRootMain extends HookWidget {
                       return MaterialPage<Widget>(child: NotFoundPage());
                     },
                     routes: {
-                      '/': (_) => MaterialPage<Widget>(child: AppSearchPage()),
+                      '/': (_) =>
+                          MaterialPage<Widget>(child: ItunesSearchPage()),
                     })));
   }
 }
