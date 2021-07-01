@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_work_sample/config/app_config.dart';
-import 'package:flutter_work_sample/pages/app_list_page.dart';
+import 'package:flutter_work_sample/pages/app_search_page.dart';
 import 'package:flutter_work_sample/pages/not_found_page.dart';
 import 'package:routemaster/routemaster.dart';
 

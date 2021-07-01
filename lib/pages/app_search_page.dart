@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_work_sample/components/organisms/app_search_body.dart';
 import 'package:flutter_work_sample/components/organisms/drawer_body.dart';
 
 class AppSearchPage extends HookWidget {
@@ -10,6 +11,6 @@ class AppSearchPage extends HookWidget {
     return Scaffold(
         appBar: AppBar(title: Text(_title)),
         drawer: DrawerBody(),
-        body: Container());
+        body: AppSearchBody());
   }
 }
