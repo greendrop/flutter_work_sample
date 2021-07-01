@@ -15,6 +15,7 @@ class ItunesSearchAddForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final isInitialized = useState(false);
+    final formKey = useMemoized(() => GlobalKey<FormState>());
     final termTextEditingController = useTextEditingController(text: '');
 
     useEffect(() {
@@ -30,26 +31,31 @@ class ItunesSearchAddForm extends HookWidget {
       return Container();
     }
 
-    return Column(children: [
-      TextFormField(
-          controller: termTextEditingController,
-          decoration: const InputDecoration(labelText: 'Term'),
-          validator: _termValidator,
-          autovalidateMode: AutovalidateMode.onUserInteraction),
-      DropdownButton(
-          items: const [
-            DropdownMenuItem(value: 'music', child: Text('music')),
-            DropdownMenuItem(value: 'software', child: Text('software')),
-          ],
-          value: 'music',
-          onChanged: (value) {
-            onChangedMedia(value.toString());
-          }),
-      TextButton(
-          onPressed:
-              termTextEditingController.text == '' ? null : onPressedSearch,
-          child: const Text('SEARCH'))
-    ]);
+    return Form(
+        key: formKey,
+        child: Column(children: [
+          TextFormField(
+              controller: termTextEditingController,
+              decoration: const InputDecoration(labelText: 'Term'),
+              validator: _termValidator,
+              autovalidateMode: AutovalidateMode.onUserInteraction),
+          DropdownButton(
+              items: const [
+                DropdownMenuItem(value: 'music', child: Text('music')),
+                DropdownMenuItem(value: 'software', child: Text('software')),
+              ],
+              value: 'music',
+              onChanged: (value) {
+                onChangedMedia(value.toString());
+              }),
+          TextButton(
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  onPressedSearch();
+                }
+              },
+              child: const Text('SEARCH'))
+        ]));
   }
 
   String? _termValidator(String? value) {
