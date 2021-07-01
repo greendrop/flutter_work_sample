@@ -34,11 +34,19 @@ class ItunesSearchBody extends HookWidget {
               onChangedTerm: onChangedTerm,
               onChangedMedia: onChangedMedia,
               onPressedSearch: onPressedSearch)),
-      Expanded(
-          child: ListView(children: [
-        ...itunesSearchState.itunesResults
-            .map((item) => ItunesSearchListItem(itunesResult: item))
-      ]))
+      itunesSearchState.itunesResults.isNotEmpty
+          ? Expanded(
+              child: ListView(children: [
+              ...itunesSearchState.itunesResults
+                  .map((item) => ItunesSearchListItem(itunesResult: item))
+            ]))
+          : Expanded(
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [Text('検索結果がありません')])
+            ]))
     ]);
   }
 }
