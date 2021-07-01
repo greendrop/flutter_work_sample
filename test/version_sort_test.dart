@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter_test/flutter_test.dart';
 
 int conpareVersion(String versionA, String versionB) {
