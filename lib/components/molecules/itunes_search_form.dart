@@ -17,6 +17,7 @@ class ItunesSearchAddForm extends HookWidget {
     final isInitialized = useState(false);
     final formKey = useMemoized(() => GlobalKey<FormState>());
     final termTextEditingController = useTextEditingController(text: '');
+    final media = useState('music');
 
     useEffect(() {
       termTextEditingController.addListener(() {
@@ -44,8 +45,9 @@ class ItunesSearchAddForm extends HookWidget {
                 DropdownMenuItem(value: 'music', child: Text('music')),
                 DropdownMenuItem(value: 'software', child: Text('software')),
               ],
-              value: 'music',
+              value: media.value,
               onChanged: (value) {
+                media.value = value.toString();
                 onChangedMedia(value.toString());
               }),
           TextButton(
