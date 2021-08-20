@@ -1,7 +1,10 @@
-import 'package:flutter_work_sample/entities/itunes_result.dart';
-import 'package:flutter_work_sample/repositories/itunes_search_repository.dart';
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+// Project imports:
+import 'package:flutter_work_sample/entities/itunes_result.dart';
+import 'package:flutter_work_sample/repositories/itunes_search_repository.dart';
 
 part 'itunes_search_state.freezed.dart';
 

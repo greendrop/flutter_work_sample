@@ -1,5 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_hooks/flutter_hooks.dart';
+
+// Project imports:
 import 'package:flutter_work_sample/entities/itunes_result.dart';
 
 class ItunesSearchListItem extends HookWidget {

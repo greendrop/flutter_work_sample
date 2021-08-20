@@ -1,7 +1,11 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:flutter_work_sample/entities/itunes_result.dart';
+// Package imports:
 import 'package:http/http.dart' as http;
+
+// Project imports:
+import 'package:flutter_work_sample/entities/itunes_result.dart';
 
 class ItunesSearchRepository {
   Future<List<ItunesResult>> search(

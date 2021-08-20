@@ -1,9 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:routemaster/routemaster.dart';
+
+// Project imports:
 import 'package:flutter_work_sample/config/app_config.dart';
 import 'package:flutter_work_sample/pages/itunes_search_page.dart';
 import 'package:flutter_work_sample/pages/not_found_page.dart';
-import 'package:routemaster/routemaster.dart';
 
 class AppRoot extends HookWidget {
   @override
