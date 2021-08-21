@@ -1,0 +1,29 @@
+name: Test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.2.1'
+
+      - name: flutter pub get
+        run: flutter pub get
+
+      - name: flutter format
+        run: flutter format --dry-run --set-exit-if-changed .
+
+      - name: flutter analyze
+        run: flutter analyze
+
+      - name: flutter import_sorter
+        run: flutter pub run import_sorter:main --exit-if-changed
+
+      - name: flutter test
+        run: flutter test
